@@ -18,10 +18,6 @@ const Header = () => {
 		(state) => state.isHamburgerButtonClickedHandler
 	);
 
-	const isHamburgerButtonClicked = Store(
-		(state) => state.isHamburgerButtonClicked
-	);
-
 	return (
 		<HeaderStyle>
 			<Link href="/">

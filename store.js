@@ -6,6 +6,8 @@ const Store = create((set) => ({
 		set((state) => ({
 			isHamburgerButtonClicked: !state.isHamburgerButtonClicked,
 		})),
+	isSelected: 0,
+	setIsSelected: (index) => set({ isSelected: index }),
 }));
 
 export default Store;
