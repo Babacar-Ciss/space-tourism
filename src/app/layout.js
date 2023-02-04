@@ -15,6 +15,11 @@ const LayoutContainer = styled.div`
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	@media (min-width: 768px) {
+		padding-inline: 0;
+		padding-top: 0;
+	}
 `;
 
 export default function RootLayout({ children }) {
