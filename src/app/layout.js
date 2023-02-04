@@ -10,6 +10,10 @@ const LayoutContainer = styled.div`
 	padding-top: 2.4rem;
 	background-color: var(--black);
 	min-height: 100vh;
+	background-image: url("assets/home/background-home-mobile.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 `;
 
 export default function RootLayout({ children }) {

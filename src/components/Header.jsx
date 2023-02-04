@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
+import Store from "store";
 
 const HeaderStyle = styled.header`
 	display: flex;
@@ -13,6 +14,14 @@ const HamburgerIcon = styled(Image)`
 `;
 
 const Header = () => {
+	const isHamburgerButtonClickedHandler = Store(
+		(state) => state.isHamburgerButtonClickedHandler
+	);
+
+	const isHamburgerButtonClicked = Store(
+		(state) => state.isHamburgerButtonClicked
+	);
+
 	return (
 		<HeaderStyle>
 			<Link href="/">
@@ -24,6 +33,7 @@ const Header = () => {
 				alt="logo"
 				width="24"
 				height="21"
+				onClick={() => isHamburgerButtonClickedHandler()}
 			/>
 		</HeaderStyle>
 	);

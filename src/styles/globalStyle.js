@@ -18,7 +18,6 @@ export const GlobalStyle = createGlobalStyle`
         --white : #FFF;
         --black : #0B0D17;
         --blue : #D0D6F9;
-
         font-size : 62.5%;
     }
     
