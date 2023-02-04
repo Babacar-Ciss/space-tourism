@@ -5,10 +5,8 @@ import StyledComponentsRegistry from "./lib/registry";
 import Header from "@/components/Header";
 import styled from "styled-components";
 import OverlayMenu from "@/components/OverlayMenu";
-import Store from "store";
 
 const LayoutContainer = styled.div`
-	position: relative;
 	padding-inline: 2.4rem;
 	padding-top: 2.4rem;
 	background-color: var(--black);
@@ -20,10 +18,6 @@ const LayoutContainer = styled.div`
 `;
 
 export default function RootLayout({ children }) {
-	const isHamburgerButtonClicked = Store(
-		(state) => state.isHamburgerButtonClicked
-	);
-
 	return (
 		<html lang="en">
 			{/*
@@ -37,7 +31,7 @@ export default function RootLayout({ children }) {
 					<LayoutContainer>
 						<Header />
 						{children}
-						{isHamburgerButtonClicked && <OverlayMenu />}
+						<OverlayMenu />
 					</LayoutContainer>
 				</StyledComponentsRegistry>
 			</body>
