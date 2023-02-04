@@ -2,15 +2,56 @@ import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 import Store from "store";
+import MenuList from "./MenuList";
 
 const HeaderStyle = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	:active,
+	:focus {
+		outline: none;
+	}
+`;
+
+const ImageLogoMobile = styled(Image)`
+	@media (min-width: 768px) {
+		align-self: flex-end;
+		margin-top: 2.4rem;
+		margin-left: 3.9rem;
+	}
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+`;
+
+const ImageLogoTablet = styled(Image)`
+	display: none;
+
+	@media (min-width: 768px) {
+		display: block;
+		margin-left: 3.9rem;
+	}
 `;
 
 const HamburgerIcon = styled(Image)`
 	cursor: pointer;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+`;
+
+const MenuContainer = styled.div`
+	display: none;
+
+	@media (min-width: 768px) {
+		display: flex;
+		background: rgba(255, 255, 255, 0.04);
+		backdrop-filter: blur(40.7742px);
+	}
 `;
 
 const Header = () => {
@@ -21,7 +62,21 @@ const Header = () => {
 	return (
 		<HeaderStyle>
 			<Link href="/">
-				<Image src="assets/shared/logo.svg" alt="logo" width="40" height="40" />
+				{/* Logo image for phone screen */}
+				<ImageLogoMobile
+					src="assets/shared/logo.svg"
+					alt="logo"
+					width="40"
+					height="40"
+				/>
+
+				{/* Logo image for tablet screen */}
+				<ImageLogoTablet
+					src="/assets/shared/logo.svg"
+					alt="logo"
+					width="48"
+					height="48"
+				/>
 			</Link>
 
 			<HamburgerIcon
@@ -31,6 +86,10 @@ const Header = () => {
 				height="21"
 				onClick={() => isHamburgerButtonClickedHandler()}
 			/>
+
+			<MenuContainer>
+				<MenuList />
+			</MenuContainer>
 		</HeaderStyle>
 	);
 };

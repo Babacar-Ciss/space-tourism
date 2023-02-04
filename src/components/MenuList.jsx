@@ -32,6 +32,25 @@ const LinkMenu = styled(Link)`
 		text-decoration: none;
 		color: var(--white);
 	}
+
+	@media (min-width: 768px) {
+		:first-of-type {
+			margin-left: 4.8rem;
+			margin-right: 3.7rem;
+		}
+
+		:nth-of-type(2) {
+			margin-right: 4.2rem;
+		}
+
+		:nth-of-type(3) {
+			margin-right: 3.7rem;
+		}
+
+		:nth-of-type(4) {
+			margin-right: 4.8rem;
+		}
+	}
 `;
 
 const Wrapper = styled.div`
@@ -40,15 +59,34 @@ const Wrapper = styled.div`
 	padding: 0.6rem 0;
 	border-right: ${({ isSelected }) =>
 		isSelected ? "4px solid var(--white)" : "0"};
+
+	@media (min-width: 768px) {
+		margin-bottom: 0;
+		padding: 0;
+		border-right: 0;
+		border-bottom: ${({ isSelected }) =>
+			isSelected ? "4px solid var(--white)" : "0"};
+	}
 `;
 
 const NumberMenu = styled.span`
 	font-weight: 700;
 	margin-right: 1.1rem;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
 `;
 
 const TitleMenu = styled.span`
 	font-size: 1.6rem;
+
+	@media (min-width: 768px) {
+		font-size: 1.4rem;
+		line-height: 1.4rem;
+		letter-spacing: 2.3625px;
+		padding: 4rem 0;
+	}
 `;
 
 const MenuList = () => {
