@@ -54,6 +54,20 @@ const MenuContainer = styled.div`
 	}
 `;
 
+const LinePattern = styled.div`
+	display: none;
+
+	@media (min-width: 1440px) {
+		display: block;
+		min-width: calc(34%);
+		height: 1px;
+		background-color: var(--white);
+		opacity: 0.25;
+		margin-right: -15rem;
+		z-index: 2;
+	}
+`;
+
 const Header = () => {
 	const isHamburgerButtonClickedHandler = Store(
 		(state) => state.isHamburgerButtonClickedHandler
@@ -79,6 +93,9 @@ const Header = () => {
 				/>
 			</Link>
 
+			<LinePattern />
+
+			{/* Logo image for phone screen */}
 			<HamburgerIcon
 				src="assets/shared/icon-hamburger.svg"
 				alt="logo"
