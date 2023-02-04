@@ -1,7 +1,6 @@
 "use client";
 
 import { createGlobalStyle } from "styled-components";
-
 import { Bellefair } from "@next/font/google";
 
 const belleFair = Bellefair({ weight: "400", subsets: ["latin"] });
@@ -25,8 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     
     body {
         font-family: ${belleFair.style.fontFamily};
-
-
+        color: var(--white);
     }
 
  

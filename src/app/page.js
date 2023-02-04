@@ -3,7 +3,6 @@
 import styled from "styled-components";
 
 const P = styled.p`
-	color: var(--black);
 	font-size: 1.6rem;
 `;
 
