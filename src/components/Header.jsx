@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
-import Store from "store";
+import Store from "../store";
 import MenuList from "./MenuList";
 
 const HeaderStyle = styled.header`

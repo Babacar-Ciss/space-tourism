@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { Barlow_Condensed } from "@next/font/google";
-import Store from "store";
+import Store from "../store";
 
 const LIST_ITEMS = [
 	{ number: "00", title: "home", path: "/" },

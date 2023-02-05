@@ -5,6 +5,7 @@ import StyledComponentsRegistry from "./lib/registry";
 import Header from "@/components/Header";
 import styled from "styled-components";
 import OverlayMenu from "@/components/OverlayMenu";
+import Store from "@/store";
 
 const LayoutContainer = styled.div`
 	padding-inline: 2.4rem;
@@ -71,7 +72,7 @@ export default function RootLayout({ children }) {
 					>
 						<Header />
 						{children}
-						<OverlayMenu />
+						{isHamburgerButtonClicked && <OverlayMenu />}
 					</LayoutContainer>
 				</StyledComponentsRegistry>
 			</body>

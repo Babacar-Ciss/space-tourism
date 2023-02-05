@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Barlow_Condensed } from "@next/font/google";
-import Store from "store";
+import Store from "../store";
 
 const barlow = Barlow_Condensed({
 	weight: ["400", "700"],

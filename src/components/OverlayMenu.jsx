@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Store from "store";
+import Store from "../store";
 import Image from "next/image";
 import MenuList from "./MenuList";
 

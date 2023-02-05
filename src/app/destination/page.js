@@ -5,7 +5,7 @@ import { Barlow_Condensed } from "@next/font/google";
 import { Barlow } from "@next/font/google";
 import Image from "next/image";
 import PlanetsList from "@/components/PlanetsList";
-import Store from "store";
+import Store from "../../store";
 
 const DESTINATION_DATAS = [
 	{

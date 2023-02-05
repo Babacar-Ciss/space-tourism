@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Barlow, Barlow_Condensed } from "@next/font/google";
 import Link from "next/link";
 
-import Store from "store";
+import Store from "../store";
 
 const barlow = Barlow({ weight: "400", subsets: ["latin"] });
 const barlowCondensed = Barlow_Condensed({ weight: "400", subsets: ["latin"] });
