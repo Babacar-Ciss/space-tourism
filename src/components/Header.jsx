@@ -54,11 +54,27 @@ const MenuContainer = styled.div`
 	}
 `;
 
+const LinePattern = styled.div`
+	display: none;
+
+	@media (min-width: 1440px) {
+		display: block;
+		min-width: calc(34%);
+		height: 1px;
+		background-color: var(--white);
+		opacity: 0.25;
+		margin-right: -15rem;
+		z-index: 2;
+	}
+`;
+
 const Header = () => {
 	const isHamburgerButtonClickedHandler = Store(
 		(state) => state.isHamburgerButtonClickedHandler
 	);
+	const setIsSelected = Store((state) => state.setIsSelected);
 
+	setIsSelected;
 	return (
 		<HeaderStyle>
 			<Link href="/">
@@ -68,6 +84,7 @@ const Header = () => {
 					alt="logo"
 					width="40"
 					height="40"
+					onClick={() => setIsSelected(0)}
 				/>
 
 				{/* Logo image for tablet screen */}
@@ -76,9 +93,13 @@ const Header = () => {
 					alt="logo"
 					width="48"
 					height="48"
+					onClick={() => setIsSelected(0)}
 				/>
 			</Link>
 
+			<LinePattern />
+
+			{/* Logo image for phone screen */}
 			<HamburgerIcon
 				src="assets/shared/icon-hamburger.svg"
 				alt="logo"

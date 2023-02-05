@@ -51,6 +51,24 @@ const LinkMenu = styled(Link)`
 			margin-right: 4.8rem;
 		}
 	}
+
+	@media (min-width: 1440px) {
+		display: block;
+
+		:first-of-type {
+			margin-left: 12.3rem;
+		}
+
+		:first-of-type,
+		:nth-of-type(2),
+		:nth-of-type(3) {
+			margin-right: 4.8rem;
+		}
+
+		:nth-of-type(4) {
+			margin-right: 16.5rem;
+		}
+	}
 `;
 
 const Wrapper = styled.div`
@@ -67,6 +85,12 @@ const Wrapper = styled.div`
 		border-bottom: ${({ isSelected }) =>
 			isSelected ? "4px solid var(--white)" : "0"};
 	}
+
+	@media (min-width: 1440px) {
+		align-items: center;
+		margin-bottom: 0;
+		padding: 0;
+	}
 `;
 
 const NumberMenu = styled.span`
@@ -75,6 +99,10 @@ const NumberMenu = styled.span`
 
 	@media (min-width: 768px) {
 		display: none;
+	}
+
+	@media (min-width: 1440px) {
+		display: block;
 	}
 `;
 
@@ -92,6 +120,9 @@ const TitleMenu = styled.span`
 const MenuList = () => {
 	const isSelected = Store((state) => state.isSelected);
 	const setIsSelected = Store((state) => state.setIsSelected);
+	const closeMenuSideNavHandler = Store(
+		(state) => state.closeMenuSideNavHandler
+	);
 
 	const toggleIsSelectedHandler = (index) => {
 		if (index === isSelected) {
@@ -108,6 +139,7 @@ const MenuList = () => {
 					href={item.path}
 					onClick={() => {
 						toggleIsSelectedHandler(index);
+						closeMenuSideNavHandler();
 					}}
 				>
 					<Wrapper isSelected={isSelected === index}>
