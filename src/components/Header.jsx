@@ -72,7 +72,9 @@ const Header = () => {
 	const isHamburgerButtonClickedHandler = Store(
 		(state) => state.isHamburgerButtonClickedHandler
 	);
+	const setIsSelected = Store((state) => state.setIsSelected);
 
+	setIsSelected;
 	return (
 		<HeaderStyle>
 			<Link href="/">
@@ -82,6 +84,7 @@ const Header = () => {
 					alt="logo"
 					width="40"
 					height="40"
+					onClick={() => setIsSelected(0)}
 				/>
 
 				{/* Logo image for tablet screen */}
@@ -90,6 +93,7 @@ const Header = () => {
 					alt="logo"
 					width="48"
 					height="48"
+					onClick={() => setIsSelected(0)}
 				/>
 			</Link>
 

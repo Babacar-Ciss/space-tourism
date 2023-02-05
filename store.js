@@ -6,8 +6,13 @@ const Store = create((set) => ({
 		set((state) => ({
 			isHamburgerButtonClicked: !state.isHamburgerButtonClicked,
 		})),
+	closeMenuSideNavHandler: () => set({ isHamburgerButtonClicked: false }),
+
 	isSelected: 0,
 	setIsSelected: (index) => set({ isSelected: index }),
+
+	selectedPlanet: "moon",
+	setSelectedPlanet: (activePlanet) => set({ selectedPlanet: activePlanet }),
 }));
 
 export default Store;

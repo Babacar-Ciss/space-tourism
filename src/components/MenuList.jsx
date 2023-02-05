@@ -120,6 +120,9 @@ const TitleMenu = styled.span`
 const MenuList = () => {
 	const isSelected = Store((state) => state.isSelected);
 	const setIsSelected = Store((state) => state.setIsSelected);
+	const closeMenuSideNavHandler = Store(
+		(state) => state.closeMenuSideNavHandler
+	);
 
 	const toggleIsSelectedHandler = (index) => {
 		if (index === isSelected) {
@@ -136,6 +139,7 @@ const MenuList = () => {
 					href={item.path}
 					onClick={() => {
 						toggleIsSelectedHandler(index);
+						closeMenuSideNavHandler();
 					}}
 				>
 					<Wrapper isSelected={isSelected === index}>

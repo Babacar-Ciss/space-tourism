@@ -39,8 +39,10 @@ export default function RootLayout({ children }) {
 	const isHamburgerButtonClicked = Store(
 		(state) => state.isHamburgerButtonClicked
 	);
-
 	const isSelected = Store((state) => state.isSelected);
+	const closeMenuSideNavHandler = Store(
+		(state) => state.closeMenuSideNavHandler
+	);
 
 	const SelectBackgroundBasedOnRoutesHandler = (index) => {
 		switch (index) {
@@ -59,20 +61,15 @@ export default function RootLayout({ children }) {
 		}
 	};
 
-	// console.log(SelectBackgroundBasedOnRoutesHandler(isSelected));
-
 	return (
 		<html lang="en">
-			{/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
 			<head />
 			<body>
 				<StyledComponentsRegistry>
 					<GlobalStyle />
 					<LayoutContainer
 						routeName={SelectBackgroundBasedOnRoutesHandler(isSelected)}
+						// onClick={() => closeMenuSideNavHandler()}
 					>
 						<Header />
 						{children}
